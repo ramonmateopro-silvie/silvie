@@ -14,8 +14,10 @@ _The system of record. If it isn't written here, it isn't remembered. Update it 
 | 2026-10-13 | Tenant app: same look, fewer pages (announcements, info & resources, limited feedback/contact). Exact pages decided after review. |
 | 2026-10-13 | Hidden Well is its own app (repo `hiddenwell`); this app only gets a launch button. |
 | 2026-10-13 | Anna's existing data is on her computer; Ramon hands it over at import time. |
+| 2026-10-13 | Tiered plan approved as written. |
+| 2026-10-13 | Ramon is creating a brand-new dedicated repo for this project. Move these docs there and build there; this `silvie` repo is temporary. |
 
-## Tiered plan (proposed; awaiting Ramon's confirmation)
+## Tiered plan (approved 2026-10-13)
 - **Tier 0 — Foundation** _(A SESSION)_: Next.js app scaffold, mobile/PWA shell, login + roles, database schema, visible BUILD_ID, gates, Vercel deploy flow.
 - **Tier 1 — Core tracking** _(A SESSION–OVERNIGHT)_: tasks/subtasks, projects/sub-projects, categories, routine vs. project, Top 12, horizon tiers (current / watch / pie-in-the-sky), completion archive, stalled status + resume notes, big-project planning fields; activity log; **spreadsheet export button**.
 - **Tier 2 — Claude bar** _(A SESSION)_: text + mic input, parse → confirm → file; neglect reminders.
@@ -24,8 +26,7 @@ _The system of record. If it isn't written here, it isn't remembered. Update it 
 - **Tier 5 — Import** _(SMALL–A SESSION, depends on data)_: Anna's spreadsheet, categories, inventory images, chat logs.
 
 ## Open items / blocked on Ramon
-- [ ] Confirm tier ordering above.
-- [ ] Repo visibility: currently **public**. Recommend private before app code and the inheritance doc go in.
+- [ ] New dedicated repo (Ramon creating). Recommend private. Once it exists: move these docs over, commit the inheritance doc, start Tier 0 there.
 - [ ] Accounts: Vercel project, database provider (recommend Neon Postgres via Vercel), Vercel Blob for images, Claude API key. All are Ramon's accounts/spend.
 - [ ] Deploy ref: which branch Vercel deploys from.
 - [ ] Hidden Well launch URL / deep link.
