@@ -27,9 +27,9 @@ A **mobile-first web app** (opened from a URL in Chrome, feels like a native pho
 | User | Access |
 |---|---|
 | Developer (son-in-law) | Full |
-| Primary user (mother-in-law) | Full |
+| Anna (primary user, mother-in-law) | Full |
 | Amara | Full (dashboard access) |
-| Tenants | Limited: house rules, rent info |
+| Tenants | Limited app (see Tenants) |
 
 ## Features
 
@@ -73,12 +73,12 @@ Each meeting gets a structured agenda:
 - Future goals (watch list) and pie-in-the-sky items
 
 ### 7. Tenants
-- **Tenant-facing view**: house rules, rent.
+- **Tenant app**: looks more or less the same, but with far fewer pages and features. Mainly an **announcements** page and an **information & resources** page (house rules, rent), plus limited ways to **give feedback / make contact**. Exactly which pages are tenant-visible gets decided once the app is built and reviewed.
 - **Tenant profiles** (internal): photo, about, notes.
 - **Active roster**. When a tenant moves out, the profile goes **dormant** into a backlog but is kept.
 
-### 8. Hidden Well section
-- A dedicated "Hidden Well" portion of the app. _(Scope TBD.)_
+### 8. Hidden Well
+- Hidden Well is **its own separate app**, already installed on the phone. This app gets a **button that launches Hidden Well**. Hidden Well-related functions live there, not here.
 
 ### 9. Claude assistant bar (core feature)
 Pinned at the **bottom of every screen**: a text field plus a **microphone button**.
@@ -111,11 +111,15 @@ One idea per paragraph, separated by blank lines. Close each batch with a line o
 - Inventory images plus their description spreadsheet.
 - Past chat logs, including the **Energy / House project** log (large and unwieldy). These need to be parsed down to their useful bits.
 
+## Decisions (2026-10-13)
+- **Storage**: a real database, with **spreadsheet export as an easy, highly visible feature** for Anna. To her it should feel like the data simply lives in a spreadsheet.
+- **Auth**: per-user **username + password** (e.g. credentials configured as Vercel environment variables, or a simple users table). Each user has a role: full or tenant.
+- **Hosting**: **Vercel**.
+- **Tenant scope**: a reduced version of the same app, finalized during review (see Tenants).
+- **Hidden Well**: a launch button to the separate Hidden Well app (see Hidden Well).
+- **Existing data**: on Anna's computer. It will be collected and handed over for import when the app is ready to take it.
+
 ## Open questions
-- [ ] **Backend / storage.** Keep a spreadsheet (Google Sheets) as the visible source of truth, or use a real database with spreadsheet export?
-- [ ] **Auth.** How each user signs in. How tenant-limited access is enforced.
-- [ ] **Hosting** for the app and beta URL.
-- [ ] **Claude API key.** It must stay server-side and never ship to the browser.
-- [ ] **Hidden Well** section: what it contains and who can see it.
-- [ ] Where the existing spreadsheet, category list and inventory images live today.
+- [ ] **Claude API key.** It must stay server-side (Vercel env var) and never ship to the browser.
 - [ ] Voice input: browser speech-to-text vs. a transcription API.
+- [ ] Hidden Well launch method: its URL or app deep link.
